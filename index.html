@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f3">
+    <title>听力慢慢来 · 25 天听力训练</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" id="home-link" aria-label="返回训练计划">
+          <span class="brand-mark" aria-hidden="true">耳</span>
+          <span>听力慢慢来</span>
+        </a>
+        <span class="topbar-note">LISTEN A LITTLE, EVERY DAY</span>
+      </header>
+
+      <section id="home-view" class="view">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR 25-DAY LISTENING PLAN</p>
+            <h1>每天听一点，<br><span>英语自然会多一点。</span></h1>
+            <p class="hero-description">从 10 月 30 日开始，25 天循序渐进。选一个日期，开始今天的听力练习。</p>
+            <div class="progress-block">
+              <div class="progress-label">
+                <span>训练进度</span>
+                <strong id="progress-label">0 / 25 天</strong>
+              </div>
+              <div class="progress-track"><span id="progress-bar"></span></div>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-sun"></div>
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <div class="art-disc"><span>listen<br>closely</span></div>
+            <span class="art-note note-one">♪</span>
+            <span class="art-note note-two">♫</span>
+            <span class="art-caption">one day at a time</span>
+          </div>
+        </section>
+
+        <section class="schedule-section" aria-labelledby="schedule-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR DAILY PRACTICE</p>
+              <h2 id="schedule-title">25 天训练日历</h2>
+            </div>
+            <span class="schedule-range">10.30 — 11.23 <span>· 2026</span></span>
+          </div>
+          <div class="date-grid" id="date-grid" aria-label="选择训练日期"></div>
+          <div class="legend">
+            <span><i class="legend-dot today-dot"></i>今天</span>
+            <span><i class="legend-dot done-dot"></i>已完成</span>
+            <span><i class="legend-dot"></i>待训练</span>
+          </div>
+        </section>
+        <footer class="home-footer">把注意力交给声音，剩下的交给时间。<span>GOOD THINGS TAKE PRACTICE.</span></footer>
+      </section>
+
+      <section id="lesson-view" class="view hidden">
+        <div class="lesson-nav">
+          <button class="back-button" id="back-button" type="button"><span aria-hidden="true">←</span> 返回训练日历</button>
+          <span id="lesson-date" class="lesson-date"></span>
+        </div>
+
+        <section class="lesson-heading">
+          <div>
+            <p class="eyebrow" id="lesson-kicker">DAY 01 · FOUNDATION</p>
+            <h1 id="lesson-title">Model Test 1</h1>
+            <p class="lesson-subtitle">跟着声音听，也可以点选任意一句重新开始。</p>
+          </div>
+          <span class="lesson-badge" id="lesson-badge">基础带练</span>
+        </section>
+
+        <section class="player-card" aria-label="音频播放器">
+          <audio id="audio" preload="metadata"></audio>
+          <div class="player-top">
+            <div class="track-info">
+              <span class="playing-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <span><strong id="track-name">Model Test 1</strong><small>六级听力 · 今日练习</small></span>
+            </div>
+            <span class="audio-status" id="audio-status">准备就绪</span>
+          </div>
+          <input id="seek-bar" class="seek-bar" type="range" min="0" max="1000" value="0" aria-label="音频进度">
+          <div class="time-row"><span id="current-time">00:00</span><span id="duration">--:--</span></div>
+          <div class="player-controls">
+            <button type="button" class="skip-button" id="back-five" aria-label="后退 5 秒"><span>↶</span><small>5s</small></button>
+            <button type="button" class="play-button" id="play-button" aria-label="播放"><span id="play-icon">▶</span></button>
+            <button type="button" class="skip-button" id="forward-five" aria-label="前进 5 秒"><span>↷</span><small>5s</small></button>
+          </div>
+          <p class="keyboard-hint"><kbd>←</kbd><kbd>→</kbd> 快退 / 快进 5 秒 <span>·</span> <kbd>空格</kbd> 暂停 / 继续</p>
+        </section>
+
+        <section class="transcript-section">
+          <div class="transcript-heading">
+            <div><p class="eyebrow">LISTEN & FOLLOW</p><h2>听力原文</h2></div>
+            <span class="transcript-hint">点击句子可跳转到对应时间</span>
+          </div>
+          <div class="transcript-list" id="transcript-list" aria-live="polite"></div>
+        </section>
+        <footer class="lesson-footer"><button id="complete-button" type="button" class="complete-button">完成今天的训练 <span>→</span></button></footer>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
